@@ -45,7 +45,7 @@ output "m" {
 }
 
 variable "c" {
-
+type = number
 }
 
 output "c" {
