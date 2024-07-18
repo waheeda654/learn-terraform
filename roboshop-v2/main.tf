@@ -1,9 +1,8 @@
 
 resource "aws_instance" "frontend" {
-  ami           = var.ami
+  ami           = data.aws_ami.ami.image_id
   instance_type = var.instance_type
-  vpc_security_group_ids =var.security_group_id
-
+  vpc_security_group_ids =data.aws_security_groups.sg.ids
   tags = {
     Name = "frontend.dev"
   }
@@ -16,9 +15,9 @@ resource "aws_route53_record" "frontend" {
   records = [aws_instance.frontend.private_ip]
 }
 resource "aws_instance" "mongo" {
-  ami           = var.ami
+  ami           = data.aws_ami.ami.image_id
   instance_type = var.instance_type
-  vpc_security_group_ids =var.security_group_id
+  vpc_security_group_ids =data.aws_security_groups.sg.ids
 
   tags = {
     Name = "mongo.dev"
@@ -34,9 +33,9 @@ resource "aws_route53_record" "mongo" {
 }
 
 resource "aws_instance" "catalogue" {
-  ami           = var.ami
+  ami           = data.aws_ami.ami.image_id
   instance_type = var.instance_type
-  vpc_security_group_ids =var.security_group_id
+  vpc_security_group_ids =data.aws_security_groups.sg.ids
 
   tags = {
     Name = "catalogue.dev"
