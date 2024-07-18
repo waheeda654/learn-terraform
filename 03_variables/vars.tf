@@ -20,7 +20,7 @@ variable "l" {
 #Map variable
 variable "m" {
   default = {
-    cousre = "Devops"
+    course = "Devops"
     Trainer = "Raghu"
   }
 }
@@ -41,5 +41,5 @@ output "l" {
 }
 
 output "m" {
-  value = "Course Name:- ${var.m["course"]}, Trainer Name:- ${var.m["trainer"]}"
+  value = "Course Name:- ${var.m["course"]}, Trainer Name:- ${var.m["Trainer"]}"
 }
