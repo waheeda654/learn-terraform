@@ -37,7 +37,7 @@ output "x1" {
 }
 
 output "l" {
-  value = "var.l[1]"
+  value = var.l[1]
 }
 
 output "m" {
