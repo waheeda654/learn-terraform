@@ -1,29 +1,29 @@
 resource "aws_instance" "frontend" {
   ami           = "ami-041e2ea9402c46c32"
   instance_type = "t3.small"
-  vpc_security_group_ids ="[sg-01456530816da8d59]"
+  vpc_security_group_ids =["sg-01456530816da8d59"]
 
   tags = {
-    Name = "frontend"
+    Name = "frontend.dev"
   }
 }
 
 resource "aws_instance" "mongo" {
   ami           = "ami-041e2ea9402c46c32"
   instance_type = "t3.small"
-  vpc_security_group_ids ="[sg-01456530816da8d59]"
+  vpc_security_group_ids =["sg-01456530816da8d59"]
 
   tags = {
-    Name = "mongo"
+    Name = "mongo.dev"
   }
 }
 
 resource "aws_instance" "catalogue" {
   ami           = "ami-041e2ea9402c46c32"
   instance_type = "t3.small"
-  vpc_security_group_ids ="[sg-01456530816da8d59]"
+  vpc_security_group_ids =["sg-01456530816da8d59"]
 
   tags = {
-    Name = "catalogue"
+    Name = "catalogue.dev"
   }
 }
