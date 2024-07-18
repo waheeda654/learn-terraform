@@ -8,7 +8,7 @@ resource "aws_instance" "frontend" {
   }
 }
 resource "aws_route53_record" "frontend" {
-  zone_id = var.zone_id
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "frontend.dev.${var.domain_name}"
   type    = "A"
   ttl     = 15
@@ -25,7 +25,7 @@ resource "aws_instance" "mongo" {
 }
 
 resource "aws_route53_record" "mongo" {
-  zone_id = var.zone_id
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "mongo.dev.${var.domain_name}"
   type    = "A"
   ttl     = 15
@@ -43,7 +43,7 @@ resource "aws_instance" "catalogue" {
 }
 
 resource "aws_route53_record" "catalogue" {
-  zone_id = var.zone_id
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "catalogue.dev.${var.domain_name}"
   type    = "A"
   ttl     = 15
