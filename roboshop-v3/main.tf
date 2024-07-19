@@ -14,5 +14,5 @@ resource "aws_route53_record" "dns_record" {
   name    = "frontend.dev.${var.domain_name}"
   type    = "A"
   ttl     = 15
-  records = [aws_instance.instance.private_ip[count.index]]
+  records = [aws_instance.instance[count.index].private_ip]
 }
