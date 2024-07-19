@@ -1,5 +1,5 @@
 resource "null_resource" "test" {
-  status = ""
+
 }
 
 terraform {
