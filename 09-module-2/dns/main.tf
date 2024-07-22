@@ -1,4 +1,4 @@
-resource "aws_route53_record" "test1" {
+resource "aws_route53_record" "test" {
   zone_id = "Z0945346ECJX5XF9YH9W"
   name    = "test1.dev.wdevops.fun"
   type    = "A"
